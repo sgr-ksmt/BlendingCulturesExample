@@ -9,7 +9,6 @@
 import UIKit
 
 class HandDataSource: DataSource {
-    
     init() {
         super.init(dataObject: Hand())
     }
@@ -17,14 +16,13 @@ class HandDataSource: DataSource {
     override var conditionForAdding: Bool {
         return dataObject.numberOfItems < 5
     }
+    
+    private var hand: Hand {
+        return dataObject as! Hand
+    }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        guard let
-            cell = tableView.dequeueReusableCellWithIdentifier("cardCell", forIndexPath: indexPath) as? CardCell,
-            hand = dataObject as? Hand else {
-                fatalError("Could not create CardCell")
-        }
+        let cell = tableView.dequeueReusableCellWithIdentifier("cardCell", forIndexPath: indexPath) as! CardCell
         cell.fillWith(hand[indexPath.row])
         return cell
     }
