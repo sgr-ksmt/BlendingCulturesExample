@@ -13,10 +13,16 @@ class DataSource: NSObject, SourceType {
     var conditionForAdding: Bool {
         return false
     }
-    
     var conditionForDeleting: Bool {
         return false
     }
+    var insertRowAnimationType: UITableViewRowAnimation {
+        return .Fade
+    }    
+    var deleteRowAnimationType: UITableViewRowAnimation {
+        return .Fade
+    }
+
     
     init<A: DataType>(dataObject: A) {
         self.dataObject = dataObject

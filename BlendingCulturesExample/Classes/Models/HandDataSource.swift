@@ -16,10 +16,16 @@ class HandDataSource: DataSource {
     override var conditionForAdding: Bool {
         return dataObject.numberOfItems < 5
     }
-    
     override var conditionForDeleting: Bool {
         return dataObject.numberOfItems > 1
     }
+    override var insertRowAnimationType: UITableViewRowAnimation {
+        return .Right
+    }
+    override var deleteRowAnimationType: UITableViewRowAnimation {
+        return .Left
+    }
+
     
     private var hand: Hand {
         return dataObject as! Hand
