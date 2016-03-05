@@ -17,6 +17,10 @@ class HandDataSource: DataSource {
         return dataObject.numberOfItems < 5
     }
     
+    override var conditionForDeleting: Bool {
+        return dataObject.numberOfItems > 1
+    }
+    
     private var hand: Hand {
         return dataObject as! Hand
     }
@@ -26,5 +30,8 @@ class HandDataSource: DataSource {
         cell.fillWith(hand[indexPath.row])
         return cell
     }
-
+    
+    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return conditionForDeleting
+    }
 }

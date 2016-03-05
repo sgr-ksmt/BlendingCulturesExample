@@ -11,6 +11,7 @@ import UIKit
 protocol SourceType: UITableViewDataSource {
     var dataObject: DataType { get set }
     var conditionForAdding: Bool { get }
+    var conditionForDeleting: Bool { get }
     func insertTopRowIn(tableView: UITableView)
     func deleteRowAtIndexPath(indexPath: NSIndexPath, from tableView: UITableView)
 }

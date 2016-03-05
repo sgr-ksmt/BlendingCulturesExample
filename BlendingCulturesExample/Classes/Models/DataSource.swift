@@ -14,6 +14,10 @@ class DataSource: NSObject, SourceType {
         return false
     }
     
+    var conditionForDeleting: Bool {
+        return false
+    }
+    
     init<A: DataType>(dataObject: A) {
         self.dataObject = dataObject
     }
