@@ -23,6 +23,6 @@ class CardCell: UITableViewCell {
     func fillWith(card: Card) {
         rankLabel.textColor = card.color
         rankLabel.text = card.rank.description
-        suitLabel.textColor = card.color
+        suitLabel.text = card.suit.description
     }
 }
