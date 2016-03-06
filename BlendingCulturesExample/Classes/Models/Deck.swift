@@ -12,9 +12,11 @@ class Deck {
     private var cards: [Card]
     
     init() {
-        self.cards = Suit.allSuits.map({ suit in
-            Rank.allRanks.map { Card($0, suit) }
-        }).flatMap { $0 }
+        self.cards = Suit.allSuits
+            .map{ suit in
+                Rank.allRanks.map { Card($0, suit) }
+            }
+            .flatMap { $0 }
     }
     
     var isEmpty: Bool {
