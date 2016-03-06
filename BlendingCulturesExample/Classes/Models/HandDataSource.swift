@@ -14,10 +14,10 @@ class HandDataSource: DataSource {
     }
     
     override var conditionForAdding: Bool {
-        return dataObject.numberOfItems < 5
+        return !hand.isEmptyDeck && hand.numberOfItems < 5
     }
     override var conditionForDeleting: Bool {
-        return dataObject.numberOfItems > 1
+        return hand.numberOfItems > 1
     }
     override var insertRowAnimationType: UITableViewRowAnimation {
         return .Right
@@ -38,6 +38,6 @@ class HandDataSource: DataSource {
     }
     
     func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return conditionForDeleting
+        return hand.numberOfItems > 1
     }
 }

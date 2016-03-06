@@ -21,6 +21,10 @@ enum Rank: Int, CustomStringConvertible {
         return Rank(rawValue: randomValue(numberOfRank))!
     }
     
+    static var allRanks: [Rank] {
+        return (0..<numberOfRank).map { Rank(rawValue: $0)! }
+    }
+    
     var description: String {
         switch self {
         case .Ace: return "A"
@@ -39,6 +43,10 @@ enum Suit: Int, CustomStringConvertible {
     
     static func randomSuit() -> Suit {
         return Suit(rawValue: randomValue(numberOfSuit))!
+    }
+    
+    static var allSuits: [Suit] {
+        return (0..<numberOfSuit).map { Suit(rawValue: $0)! }
     }
     
     var description: String {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D1457C81C8BCEF200C9A9EE /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1457C71C8BCEF200C9A9EE /* Deck.swift */; };
 		4D1614951C871FF7004ABBE6 /* HandVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1614941C871FF7004ABBE6 /* HandVC.swift */; };
 		4D1614971C8720E3004ABBE6 /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1614961C8720E3004ABBE6 /* Hand.swift */; };
 		4D1614991C872AA4004ABBE6 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1614981C872AA4004ABBE6 /* Card.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D1457C71C8BCEF200C9A9EE /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		4D1614941C871FF7004ABBE6 /* HandVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandVC.swift; sourceTree = "<group>"; };
 		4D1614961C8720E3004ABBE6 /* Hand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
 		4D1614981C872AA4004ABBE6 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 			children = (
 				4D1614A01C873B09004ABBE6 /* DataType.swift */,
 				4D1614961C8720E3004ABBE6 /* Hand.swift */,
+				4D1457C71C8BCEF200C9A9EE /* Deck.swift */,
 				4D1614981C872AA4004ABBE6 /* Card.swift */,
 				4D16149E1C873A37004ABBE6 /* SourceType.swift */,
 				4D16149C1C873945004ABBE6 /* DataSource.swift */,
@@ -189,6 +192,7 @@
 			files = (
 				4D16149D1C873945004ABBE6 /* DataSource.swift in Sources */,
 				4D16149B1C872F25004ABBE6 /* CardCell.swift in Sources */,
+				4D1457C81C8BCEF200C9A9EE /* Deck.swift in Sources */,
 				4D1614971C8720E3004ABBE6 /* Hand.swift in Sources */,
 				4D1614A31C873C8F004ABBE6 /* HandDataSource.swift in Sources */,
 				4D16149F1C873A37004ABBE6 /* SourceType.swift in Sources */,
