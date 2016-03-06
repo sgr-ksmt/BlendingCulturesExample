@@ -17,7 +17,7 @@ enum Rank: Int, CustomStringConvertible {
     
     static let numberOfRank = 13
     
-    static func randomSuit() -> Rank {
+    static func randomRank() -> Rank {
         return Rank(rawValue: randomValue(numberOfRank))!
     }
     
@@ -56,7 +56,7 @@ struct Card {
     private(set) var suit: Suit
     
     static func randomCard() -> Card {
-        return Card(Rank.randomSuit(),Suit.randomSuit())
+        return Card(.randomRank(),.randomSuit())
     }
     
     init(_ rank: Rank, _ suit: Suit) {
