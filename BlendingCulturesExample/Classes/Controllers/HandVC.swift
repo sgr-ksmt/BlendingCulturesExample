@@ -10,21 +10,21 @@ import UIKit
 
 class HandVC: UITableViewController {
     
-    private var dataSource = HandDataSource()
+    fileprivate var dataSource = HandDataSource()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.dataSource = dataSource
         tableView.delegate = self
-        navigationItem.leftBarButtonItem = editButtonItem()
+        navigationItem.leftBarButtonItem = editButtonItem
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 
-    @IBAction private func addNewCard(sender: UIBarButtonItem) {
+    @IBAction fileprivate func addNewCard(_ sender: UIBarButtonItem) {
         dataSource.addItemTo(tableView)
     }
 }

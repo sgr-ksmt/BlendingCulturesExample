@@ -18,11 +18,11 @@ class HandDataSource: DataSource {
         return dataObject.numberOfItems < 5
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let
-            cell = tableView.dequeueReusableCellWithIdentifier("cardCell", forIndexPath: indexPath) as? CardCell,
-            hand = dataObject as? Hand else {
+            cell = tableView.dequeueReusableCell(withIdentifier: "cardCell", for: indexPath) as? CardCell,
+            let hand = dataObject as? Hand else {
                 fatalError("Could not create CardCell")
         }
         cell.fillWith(hand[indexPath.row])

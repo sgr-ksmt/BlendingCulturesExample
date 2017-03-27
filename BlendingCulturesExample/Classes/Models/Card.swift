@@ -8,12 +8,12 @@
 
 import UIKit
 
-private func randomValue(bound: Int) -> Int {
+private func randomValue(_ bound: Int) -> Int {
     return Int(arc4random_uniform(UInt32(bound)))
 }
 
 enum Rank: Int, CustomStringConvertible {
-    case Ace, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King
+    case ace, two, three, four, five, six, seven, eight, nine, ten, jack, queen, king
     
     static let numberOfRank = 13
     
@@ -23,17 +23,17 @@ enum Rank: Int, CustomStringConvertible {
     
     var description: String {
         switch self {
-        case .Ace: return "A"
-        case .Jack: return "J"
-        case .Queen: return "Q"
-        case .King: return "K"
+        case .ace: return "A"
+        case .jack: return "J"
+        case .queen: return "Q"
+        case .king: return "K"
         default: return String(self.rawValue)
         }
     }
 }
 
 enum Suit: Int, CustomStringConvertible {
-    case Heart, Diamonds, Clubs, Spade
+    case heart, diamonds, clubs, spade
     
     static let numberOfSuit = 4
     
@@ -43,17 +43,17 @@ enum Suit: Int, CustomStringConvertible {
     
     var description: String {
         switch self {
-        case Heart: return "♥"
-        case Diamonds: return "♦"
-        case Clubs: return "♣"
-        case Spade: return "♠"
+        case .heart: return "♥"
+        case .diamonds: return "♦"
+        case .clubs: return "♣"
+        case .spade: return "♠"
         }
     }
 }
 
 struct Card {
-    private(set) var rank: Rank
-    private(set) var suit: Suit
+    fileprivate(set) var rank: Rank
+    fileprivate(set) var suit: Suit
     
     static func randomCard() -> Card {
         return Card(Rank.randomSuit(),Suit.randomSuit())
@@ -66,10 +66,10 @@ struct Card {
     
     var color: UIColor {
         switch suit {
-        case .Spade, .Clubs:
-            return .blackColor()
-        case .Heart, .Diamonds:
-            return .redColor()
+        case .spade, .clubs:
+            return .black
+        case .heart, .diamonds:
+            return .red
         }
     }
 }

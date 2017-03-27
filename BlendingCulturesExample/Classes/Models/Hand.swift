@@ -10,7 +10,7 @@ import UIKit
 
 struct Hand: DataType {
     
-    private var cards: [Card] = []
+    fileprivate var cards: [Card] = []
     
     var numberOfItems: Int {
         return cards.count
@@ -20,27 +20,27 @@ struct Hand: DataType {
         return cards[index]
     }
     
-    func addNewItemAtIndex(index: Int) -> Hand {
+    func addNewItemAtIndex(_ index: Int) -> Hand {
         return insertItem(Card.randomCard(), atIndex: index)
     }
     
-    private func insertItem(card: Card, atIndex index: Int) -> Hand {
+    fileprivate func insertItem(_ card: Card, atIndex index: Int) -> Hand {
         var mutableCards = cards
-        mutableCards.insert(card, atIndex: index)
+        mutableCards.insert(card, at: index)
         return Hand(cards: mutableCards)
     }
     
-    func cardAtPosition(index: Int) -> Card {
+    func cardAtPosition(_ index: Int) -> Card {
         return cards[index]
     }
     
-    func deleteItemAtIndex(index: Int) -> Hand {
+    func deleteItemAtIndex(_ index: Int) -> Hand {
         var mutableCards = cards
-        mutableCards.removeAtIndex(index)
+        mutableCards.remove(at: index)
         return Hand(cards: mutableCards)
     }
     
-    func moveItem(fromIndex: Int, toIndex: Int) -> Hand {
+    func moveItem(_ fromIndex: Int, toIndex: Int) -> Hand {
         return deleteItemAtIndex(fromIndex)
                .insertItem(cards[fromIndex], atIndex: toIndex)
     }
