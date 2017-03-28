@@ -10,17 +10,17 @@ import UIKit
 
 class CardCell: UITableViewCell {
 
-    @IBOutlet private weak var suitLabel: UILabel!
-    @IBOutlet private weak var rankLabel: UILabel!
+    @IBOutlet fileprivate weak var suitLabel: UILabel!
+    @IBOutlet fileprivate weak var rankLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
 
-    func fillWith(card: Card) {
+    func fillWith(_ card: Card) {
         rankLabel.textColor = card.color
         rankLabel.text = card.rank.description
         suitLabel.text = card.suit.description

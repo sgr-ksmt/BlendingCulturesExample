@@ -11,16 +11,16 @@ import UIKit
 protocol SourceType: UITableViewDataSource {
     var dataObject: DataType { get set }
     var conditionForAdding: Bool { get }
-    func insertTopRowIn(tableView: UITableView)
-    func deleteRowAtIndexPath(indexPath: NSIndexPath, from tableView: UITableView)
+    func insertTopRowIn(_ tableView: UITableView)
+    func deleteRowAtIndexPath(_ indexPath: IndexPath, from tableView: UITableView)
 }
 
 extension SourceType {
-    func insertTopRowIn(tableView: UITableView) {
-        tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 0)], withRowAnimation: .Fade)
+    func insertTopRowIn(_ tableView: UITableView) {
+        tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
     }
     
-    func deleteRowAtIndexPath(indexPath: NSIndexPath, from tableView: UITableView) {
-        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+    func deleteRowAtIndexPath(_ indexPath: IndexPath, from tableView: UITableView) {
+        tableView.deleteRows(at: [indexPath], with: .fade)
     }
 }

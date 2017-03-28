@@ -18,29 +18,29 @@ class DataSource: NSObject, SourceType {
         self.dataObject = dataObject
     }
 
-    func addItemTo(tableView: UITableView) {
+    func addItemTo(_ tableView: UITableView) {
         if conditionForAdding {
             dataObject = dataObject.addNewItemAtIndex(0)
             insertTopRowIn(tableView)
         }
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataObject.numberOfItems
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         fatalError("This method must be overridden")
     }
     
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
             dataObject = dataObject.deleteItemAtIndex(indexPath.row)
             deleteRowAtIndexPath(indexPath, from: tableView)
         }
     }
     
-    func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to toIndexPath: IndexPath) {
         dataObject = dataObject.moveItem(fromIndexPath.row, toIndex: toIndexPath.row)
     }
 

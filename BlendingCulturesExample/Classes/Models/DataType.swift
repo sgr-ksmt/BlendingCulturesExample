@@ -10,7 +10,7 @@ import UIKit
 
 protocol DataType {
     var numberOfItems: Int { get }
-    func addNewItemAtIndex(index: Int) -> Self
-    func deleteItemAtIndex(index: Int) -> Self
-    func moveItem(fromIndex: Int, toIndex: Int) -> Self
+    func addNewItemAtIndex(_ index: Int) -> Self
+    func deleteItemAtIndex(_ index: Int) -> Self
+    func moveItem(_ fromIndex: Int, toIndex: Int) -> Self
 }
